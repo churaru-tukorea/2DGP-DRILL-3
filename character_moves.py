@@ -4,8 +4,29 @@ open_canvas()
 
 boy = load_image('character.png')
 
+
+def move_top():
+    pass
+
+
+def more_right():
+    pass
+
+
+def move_bottom():
+    pass
+
+
+def more_left():
+    pass
+
+
 def move_rectangle():
     print("Moving rectangle")
+    move_top()
+    more_right()
+    move_bottom()
+    more_left()
     pass
 
 
