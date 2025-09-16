@@ -4,6 +4,12 @@ open_canvas()
 
 boy = load_image('character.png')
 
+def move_to(start_x, start_y, end_x, end_y):
+    for i in range(20):
+        t = i / 20
+        x = start_x + (end_x - start_x) * t
+        y = start_y + (end_y - start_y) * t
+        draw_boy(x, y)
 
 def move_top():
     print('Moving top')
@@ -44,7 +50,7 @@ def move_rectangle():
 
 def move_circle():
     print("Moving circle")
-
+    move_to(50, 50, 600, 300)
     r = 200
 
     for deg in range(0,360):
@@ -94,6 +100,7 @@ def move_triangle_left():
 
 def move_triangle():
     print("Moving triangle")
+    move_to(50, 550, 50, 50)
     move_triangle_bottom()
     move_triangle_right()
     move_triangle_left()
@@ -103,6 +110,7 @@ while True:
    move_rectangle()
    move_triangle()
    move_circle()
+   move_to(600, 300, 50, 550)
 
 
 
