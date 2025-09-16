@@ -62,14 +62,32 @@ def draw_boy(x: float, y: float):
 
 
 def move_triangle_bottom():
-    pass
-
+    print("Moving triangle bottom")
+    for x in range(0, 401, 5):
+        draw_boy(x, 50)
 
 def move_triangle_right():
-    pass
+    print('Moving right')
+    x1, y1 = 400, 50
+    x2, y2 = 200, 350
+
+    for i in range(60 + 1):
+        t = i / 60
+        x = x1 + (x2 - x1) * t
+        y = y1 + (y2 - y1) * t
+        draw_boy(x, y)
+
 
 
 def move_triangle_left():
+    x1, y1 = 200, 350
+    x2, y2 = 0, 50
+
+    for i in range(60 + 1):
+        t = i / 60
+        x = x1 + (x2 - x1) * t
+        y = y1 + (y2 - y1) * t
+        draw_boy(x, y)
     pass
 
 
@@ -81,9 +99,10 @@ def move_triangle():
 
 
 while True:
-    move_rectangle()
-    move_circle()
+   #move_rectangle()
     move_triangle()
+    #move_circle()
+
 
     break
     pass
