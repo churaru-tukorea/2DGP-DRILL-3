@@ -1,4 +1,5 @@
 from pico2d import *
+import math
 
 open_canvas()
 
@@ -7,30 +8,26 @@ boy = load_image('character.png')
 
 def move_top():
     print('Moving top')
-    for x in range(0,750,5):
-        draw_boy(x,550)
-    pass
+    for x in range(0, 800, 5):
+        draw_boy(x, 550)
 
 
 def move_right():
     print('Moving right')
-    for y in range(550,0,-5):
-        draw_boy(750,y)
-    pass
+    for y in range(550, 50, -5):
+        draw_boy(800, y)
 
 
 def move_bottom():
     print('Moving bottom')
-    for x in range(750,0,-5):
-        draw_boy(x,50)
-    pass
+    for x in range(800, 0, -5):
+        draw_boy(x, 50)
 
 
-def more_left():
+def move_left():
     print('Moving left')
-    for y in range(0,550,5):
-        draw_boy(50,y)
-    pass
+    for y in range(50, 550, 5):
+        draw_boy(0, y)
 
 
 def move_rectangle():
@@ -38,21 +35,19 @@ def move_rectangle():
     move_top()
     move_right()
     move_bottom()
-    more_left()
-    pass
+    move_left()
 
 
 def move_circle():
     print("Moving circle")
-
     r = 200
+    center_x = 400
+    center_y = 300
 
-    for deg in range(0,360):
-        x = r*math.cos(math.radians(deg))+400
-        y = r*math.sin(math.radians(deg))+300
+    for deg in range(0, 360, 5):
+        x = r * math.cos(math.radians(deg)) + center_x
+        y = r * math.sin(math.radians(deg)) + center_y
         draw_boy(x, y)
-
-    pass
 
 
 def draw_boy(x: float, y: float):
@@ -61,17 +56,10 @@ def draw_boy(x: float, y: float):
     delay(0.01)
 
 
-def move_triangle():
-    pass
-
-
 while True:
     move_rectangle()
     move_circle()
-    move_triangle()
-
     break
-    pass
 
 
 close_canvas()
