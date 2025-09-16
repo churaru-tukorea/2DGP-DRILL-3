@@ -85,6 +85,8 @@ def move_triangle_right():
 
 
 
+
+
 def move_triangle_left():
     print('Moving_triangle_left')
     x1, y1 = 200, 350
